@@ -1,2 +1,16 @@
-<h1>Posts#show</h1>
-<p>show post</p>
+<section>
+  <div>
+    <h1> <%= @post.title %> by: <%= @post.author.name %> </h1>
+    <p>Comments: <%= @post.comments_counter =%>, Likes: <%= @post.likes_counter =%> </p>
+  </div>
+  <p> <%= @post.text*50 =%> </p>
+  <div>
+      <% @post.comments.each do |comment| %>
+        <ul>
+          <li>
+            <p><b><i> <%= comment.author.name %>: </i></b> <%= comment.text %> </p>
+          </li>
+        </ul>
+      <% end %>
+    </div>
+</section>

@@ -1,2 +1,28 @@
-<h2>Posts#index</h2>
-<p>Index of posts</p>
+<section>
+  <%= link_to user_avatar(@user.photo), user_path(@user), class: 'user-image' %>
+  <div>
+    <h1><%= @user.name %></h1> 
+    <p>Number of posts: <%= @user.post_counter %></p>
+  </div>
+</section>
+<section class="a">
+  <% @posts.each do |post| %>
+    <h3> <a class="fs-5 fw-bold text-dark text-decoration-none" role="button" href="<%= user_post_path(@user, post) =%>"><%= post.title =%></a> </h3>
+    <p> <%= post.text %> </p>
+    <p> Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %> </p>
+    <div>
+      <% post.last_5_comments.each do |comment| %><
+        ul>
+          <li>
+            <p> <b> <%= comment.author.name %>: </b> <%= comment.text %> </p>
+          </li>
+        </ul>
+      <% end %>
+    </div>
+  <% end %>
+
+  <div class="d-flex justify-content-center my-3">
+    <button class="btn btn-outline-light w-25" type="button">Pagination</button>
+  </div>
+</section>
+
