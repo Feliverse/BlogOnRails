@@ -14,8 +14,8 @@
  *= require_self
  */
 
- * {
-  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+* {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   border: 0;
   list-style: none;
   padding-inline-start: 0;
@@ -37,7 +37,7 @@ h1 {
 }
 
 .user {
-  display:flex;
+  display: flex;
   margin-bottom: 20px;
   align-items: center;
 }
@@ -46,7 +46,7 @@ h1 {
   font-size: smaller;
   width: 100px;
   height: 100px;
-  border: 2px solid #000000;
+  border: 2px solid #000;
   margin-right: 10px;
   object-fit: cover;
   border-radius: 50%;
@@ -84,9 +84,9 @@ a {
 .user-bio {
   background-color: #e2c4c8;
 }
+
 .user-bio h3,
-.user-bio p
-{
+.user-bio p {
   background-color: transparent;
   padding: 10px;
 }
@@ -98,12 +98,12 @@ a {
 
 .post h3,
 .post p {
-background-color: #e6eefa;
-padding-left: 5px;
+  background-color: #e6eefa;
+  padding-left: 5px;
 }
 
 .post-details {
-  display:grid;
+  display: grid;
   margin-bottom: 1rem;
   background-color: #e6eefa;
 }
@@ -143,7 +143,7 @@ padding-left: 5px;
 }
 
 .reader-head {
-  display:flex;
+  display: flex;
   justify-content: space-between;
   background-color: #bac9cf;
 }
