@@ -1,2 +1,28 @@
-<h1>Users#show</h1>
-<p>show user</p>
+<section class = 'user-container container'>
+<div class='user'>
+  <%= link_to user_avatar(@user.photo), user_path(@user), class: 'user-image' %>
+  <div class = 'user-details'>
+    <h2 class ='user-name'><%= @user.name %></h2> 
+    <p class = 'user-counter'> number of posts: <%= @user.post_counter %></p>
+  </div>
+</div>
+
+
+<div class='user-bio'>
+  <h3>Bio</h3>
+  <p> <%= @user.bio %></p>
+</div>
+
+<ul class='post'>
+  <% @user.last_3_posts.each do |post| %>
+  <li class='post-details'>
+    <h3><a class="post-title" role="button" href="<%= user_post_path(@user, post) =%>"><%= post.title =%></a></h3>
+    <p class='post-text'> <%= post.text*10 %> </p>
+    <p class='post-counter user-counter'> Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %> </p>
+  </li>
+  <% end %>
+</ul>
+<div style="display: flex; justify-content: center">
+  <a class="btn btn-all-posts" type="button" href="<%= user_posts_path(@user) %>">See all posts</a>
+</div>
+</section>

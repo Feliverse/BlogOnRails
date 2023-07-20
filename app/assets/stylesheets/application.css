@@ -13,3 +13,143 @@
  *= require_tree .
  *= require_self
  */
+
+* {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  border: 0;
+  list-style: none;
+  padding-inline-start: 0;
+}
+
+h1 {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 3rem;
+  text-align: center;
+  margin: 0;
+  margin-bottom: 2rem;
+  padding: 0;
+  background-color: #bbdeec;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.user {
+  display: flex;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.user-img {
+  font-size: smaller;
+  width: 100px;
+  height: 100px;
+  border: 2px solid #000;
+  margin-right: 10px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.user-details {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: space-between;
+  margin-left: 10px;
+  background-color: #6fb3ce;
+  column-gap: 10px;
+  width: 65%;
+  height: 95%;
+  border-radius: 10%;
+}
+
+.user-name {
+  background-color: transparent;
+  padding-left: 10px;
+}
+
+a {
+  background-color: transparent;
+}
+
+.user-counter {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: small;
+  align-self: end;
+  background-color: transparent;
+  padding-right: 10px;
+}
+
+.user-bio {
+  background-color: #e2c4c8;
+}
+
+.user-bio h3,
+.user-bio p {
+  background-color: transparent;
+  padding: 10px;
+}
+
+.user-bio p,
+.post-text {
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.post h3,
+.post p {
+  background-color: #e6eefa;
+  padding-left: 5px;
+}
+
+.post-details {
+  display: grid;
+  margin-bottom: 1rem;
+  background-color: #e6eefa;
+}
+
+.post-counter {
+  justify-self: end;
+}
+
+.post {
+  display: grid;
+}
+
+.btn {
+  background-color: #f0b4a3;
+  border-radius: 5px;
+  border-bottom: 2px;
+  padding: 10px;
+}
+
+.comment {
+  padding-left: 5px;
+  background-color: #2baf57;
+}
+
+.comment-name {
+  background-color: #e9e1e2;
+}
+
+.comment-text {
+  background-color: #c9cec6;
+  margin-block: 0;
+}
+
+.reader-container {
+  background-color: #9eadb3;
+  padding-left: 5px;
+}
+
+.reader-head {
+  display: flex;
+  justify-content: space-between;
+  background-color: #bac9cf;
+}
+
+.reader-post,
+.reader-title {
+  background-color: #d0d8db;
+  margin-bottom: 0;
+}

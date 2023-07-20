@@ -1,2 +1,12 @@
-<h1>Users#index</h1>
-<p>index of users</p>
+<h2 class = 'user-container container'>Bloggers on Rails</h2><br>
+<ul class = 'user-container container'>
+  <% @users.each do |user| %>
+    <li class='user'> 
+      <%= link_to user_avatar(user.photo), user_path(user) %> 
+      <div class ='user-details'>
+        <h2 class ='user-name'> <%= link_to user.name, user_path(user) %> </h2>
+        <p class = 'user-counter'> Number of posts: <%= link_to user.post_counter, user_path(user) %> </p>
+      </div>
+    </li>
+  <% end %>
+</ul>

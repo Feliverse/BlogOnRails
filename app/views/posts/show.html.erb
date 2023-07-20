@@ -1,2 +1,17 @@
-<h1>Posts#show</h1>
-<p>show post</p>
+<section class='container'>
+  <article class='reader-container'>
+    <div class='reader-head'>
+      <h2 class ='reader-title'> <%= @post.title %> <small><i>by: <%= link_to @post.author.name, user_path(@post.author) %></i></small> </h2>
+      <p class='post-counter user-counter'>Comments: <%= @post.comments_counter =%>, Likes: <%= @post.likes_counter =%> </p>
+    </div>
+    <p class='reader-post'> <%= @post.text * 70 =%> </p>
+  </article>
+  <div class='comment-container'>
+      <h3> Comments </h3> 
+      <% @post.comments.each do |comment| %>
+        <li class='comment'>
+          <p class ='comment-text'><b><i class='comment-name'> <%= link_to comment.author.name, user_path(comment.author) %>: </i></b> <%= comment.text %> </p>
+        </li>
+      <% end %>
+    </div>
+</section>
