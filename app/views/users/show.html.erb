@@ -16,7 +16,7 @@
 <ul class='post'>
   <% @user.last_3_posts.each do |post| %>
   <li class='post-details'>
-    <h3><%= post.title %></h3>
+    <h3><a class="post-title" role="button" href="<%= user_post_path(@user, post) =%>"><%= post.title =%></a></h3>
     <p class='post-text'> <%= post.text*10 %> </p>
     <p class='post-counter user-counter'> Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %> </p>
   </li>
