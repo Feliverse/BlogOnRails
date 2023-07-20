@@ -1,16 +1,16 @@
-<section>
-  <div>
-    <h1> <%= @post.title %> by: <%= @post.author.name %> </h1>
-    <p>Comments: <%= @post.comments_counter =%>, Likes: <%= @post.likes_counter =%> </p>
-  </div>
-  <p> <%= @post.text*50 =%> </p>
-  <div>
+<section class='reader container'>
+  <article class='reader-container'>
+    <div class='reader-head'>
+      <h2 class ='reader-title'> <%= @post.title %> by: <%= @post.author.name %> </h2>
+      <p class='post-counter user-counter'>Comments: <%= @post.comments_counter =%>, Likes: <%= @post.likes_counter =%> </p>
+    </div>
+    <p class='reader-post'> <%= @post.text * 70 =%> </p>
+  </article>
+  <div class='comment-container'>
       <% @post.comments.each do |comment| %>
-        <ul>
-          <li>
-            <p><b><i> <%= comment.author.name %>: </i></b> <%= comment.text %> </p>
-          </li>
-        </ul>
+        <li class='comment'>
+          <p class ='comment-text'><b><i class='comment-name'> <%= comment.author.name %>: </i></b> <%= comment.text %> </p>
+        </li>
       <% end %>
     </div>
 </section>

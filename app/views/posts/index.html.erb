@@ -1,28 +1,31 @@
-<section>
-  <%= link_to user_avatar(@user.photo), user_path(@user), class: 'user-image' %>
-  <div>
-    <h1><%= @user.name %></h1> 
-    <p>Number of posts: <%= @user.post_counter %></p>
+<section class='user container'>
+  <%= link_to user_avatar(@user.photo), user_path(@user)%>
+  <div class ='user-details'>
+    <h2 class ='user-name'><%= @user.name %></h2> 
+    <p class = 'user-counter'>number of posts: <%= @user.post_counter %></p>
   </div>
 </section>
-<section class="a">
+
+<section class="post-container container">
   <% @posts.each do |post| %>
-    <h3> <a class="fs-5 fw-bold text-dark text-decoration-none" role="button" href="<%= user_post_path(@user, post) =%>"><%= post.title =%></a> </h3>
-    <p> <%= post.text %> </p>
-    <p> Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %> </p>
-    <div>
-      <% post.last_5_comments.each do |comment| %><
-        ul>
-          <li>
-            <p> <b> <%= comment.author.name %>: </b> <%= comment.text %> </p>
-          </li>
-        </ul>
+  <article class='post-details'>
+    <article class='post-details'>
+    <div class='post'>  
+      <h3> <a class="post-title" role="button" href="<%= user_post_path(@user, post) =%>"><%= post.title =%></a> </h3>
+      <p> <%= post.text*10 %> </p>
+      <p class='post-counter user-counter'> Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %> </p>
+    </div>
+    <div class='comment-container'>
+      <% post.last_5_comments.each do |comment| %>
+        <li class='comment'>
+          <p class ='comment-text'> <b class='comment-name'> <%= comment.author.name %>: </b> <%= comment.text %> </p>
+        </li>
       <% end %>
     </div>
+  </article>
   <% end %>
 
-  <div class="d-flex justify-content-center my-3">
-    <button class="btn btn-outline-light w-25" type="button">Pagination</button>
+  <div style="display: flex; justify-content: center">
+    <button class="btn" type="button">Pagination</button>
   </div>
 </section>
-
