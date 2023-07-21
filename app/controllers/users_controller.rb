@@ -11,11 +11,6 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
-  def CreatePosts
-    @user = User.find_by(id: params['id'])
-    @post = Post.new
-  end
-
   def create
     @user = User.create(user_params)
     redirect_to users_path
@@ -36,5 +31,4 @@ class UsersController < ApplicationController
     @user.destroy
     redirect_to users_path
   end
-
 end

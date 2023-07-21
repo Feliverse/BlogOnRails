@@ -46,7 +46,7 @@ class PostsController < ApplicationController
     redirect_to user_posts_path(@post.user)
   end
 
-private
+  private
 
   def post_params
     params.require(:post).permit(:title, :text, :author_id)
