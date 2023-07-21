@@ -1,0 +1,10 @@
+<%= form_with model: @comment, url: user_post_comments_path(post_id: @post.id), scope: :comment do |form| %>
+  <b>Add a comment:</b>
+  <div>
+    <%= form.text_area :text, placeholder:"Leave a comment here", id:"comment" %>
+    <label for="comments">Comment</label>
+  </div>
+  <div>
+    <%= form.submit "Add comment" %>
+  </div>
+<% end %>
