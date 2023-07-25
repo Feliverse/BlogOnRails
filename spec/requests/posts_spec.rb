@@ -51,4 +51,46 @@ RSpec.describe 'Post', type: :feature do
       expect(page).to have_current_path(user_post_path(user_id: @user.id, id: @post.id))
     end
   end
+
+  describe 'Post show page' do
+    before(:each) do
+      @first_user = User.create(name: 'Jhon', photo: 'https://images.unsplash.com/photo-1508921912186-1d1a45ebb3c1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2432&q=80', bio: 'Developer', post_counter: 1)
+      @second_user = User.create(name: 'Nela', photo: 'https://images.unsplash.com/photo-1508921912186-1d1a45ebb3c1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2432&q=80', bio: 'Engineer', post_counter: 1)
+      @post = Post.create(title: 'First post', text: 'Firts post', comments_counter: 2, likes_counter: 1, author: @first_user)
+      @first_comment = Comment.create(text: 'First comment', author: @first_user, post: @post)
+      @second_comment = Comment.create(text: 'Second comment', author: @second_user, post: @post)
+      Like.create(author: @first_user, post: @post)
+      visit user_post_path(user_id: @first_user.id, id: @post.id)
+    end
+
+    it "Shows the post's title" do
+      expect(page).to have_content(@post.title)
+    end
+
+    it 'shows who wrote the post' do
+      expect(page).to have_content(@post.author.name)
+    end
+
+    it 'should render the number of comments' do
+      expect(page).to have_content(@post.comments_counter)
+    end
+
+    it 'should render the number of likes' do
+      expect(page).to have_content(@post.likes_counter)
+    end
+
+    it "shows the post's body" do
+      expect(page).to have_content(@post.text)
+    end
+
+    it 'Shows the username of each commentor' do
+      expect(page).to have_content(@first_user.name)
+      expect(page).to have_content(@second_user.name)
+    end
+
+    it 'Shows the comment each commentor left' do
+      expect(page).to have_content(@first_comment.text)
+      expect(page).to have_content(@second_comment.text)
+    end
+  end
 end
