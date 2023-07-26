@@ -125,11 +125,10 @@ rspec
 - Twitter: [@FelipeHaybar](https://twitter.com/FelipeHaybar)
 - LinkedIn: [FelipeHaybar](https://linkedin.com/in/FelipeHaybar)
 
-👤 **Mohammad Rafi Amin**
+👤 **Lucas Comamala Garcia**
 
-- GitHub: [@githubhandle](https://github.com/mrkamin)
-- Twitter: [@twitterhandle](https://twitter.com/Mohamma63974237)
-- LinkedIn: [LinkedIn](https://www.linkedin.com/in/mohammad-rafi-amin-63b4319b/)
+- GitHub: [@lucascomamala](https://github.com/lucascomamala)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/lucas-comamala/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
