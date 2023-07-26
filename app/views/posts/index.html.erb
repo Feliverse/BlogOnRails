@@ -1,23 +1,31 @@
 <section class='user container'>
-  <%= link_to user_avatar(@user.photo), user_path(@user)%>
+  <%= link_to user_avatar(@user.photo), user_path(@user) %>
   <div class ='user-details'>
     <h2 class ='user-name'><%= @user.name %></h2> 
-    <p class = 'user-counter'>number of posts: <%= @user.post_counter %></p>
+    <p class='user-counter'>number of posts: <%= @user.post_counter %></p>
   </div>
 </section>
 
 <section class="post-container container">
-  <% @posts.each do |post| %>
+  <% @posts.includes(:author, :comments, :comments => :author).each do |post| %>
   <article class='post-details'>
     <div class='post'>  
-      <h3> <a class="post-title" role="button" href="<%= user_post_path(@user, post) =%>"><%= post.title =%></a> </h3>
+      <h3>
+        <a class="post-title" role="button" href="<%= user_post_path(@user, post) %>">
+          <%= post.title %>
+        </a>
+      </h3>
       <p> <%= post.text*10 %> </p>
-      <p class='post-counter user-counter'> Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %> </p>
+      <p class='post-counter user-counter'>
+        Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %>
+      </p>
     </div>
     <div class='comment-container'>
-      <% post.last_5_comments.each do |comment| %>
+      <% post.comments.each do |comment| %>
         <li class='comment'>
-          <p class ='comment-text'> <b class='comment-name'> <%= comment.author.name %>: </b> <%= comment.text %> </p>
+          <p class ='comment-text'>
+            <b class='comment-name'><%= comment.author.name %>:</b> <%= comment.text %>
+          </p>
         </li>
       <% end %>
     </div>
