@@ -80,4 +80,4 @@ group :test do
 end
 
 gem 'bootstrap'
-gem 'bootstrap_form' 
+gem 'bootstrap_form'
