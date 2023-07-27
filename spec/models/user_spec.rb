@@ -23,7 +23,7 @@ RSpec.describe User, type: :model do
     Post.create!(title: 'second post', comments_counter: 1, likes_counter: 1, author: user)
     Post.create!(title: 'third post', comments_counter: 1, likes_counter: 1, author: user)
     Post.create!(title: 'fourth post', comments_counter: 1, likes_counter: 1, author: user)
-    posts = user.last_3_post
+    posts = user.last_3_posts
     expect(posts.length).to eq(3)
   end
 
