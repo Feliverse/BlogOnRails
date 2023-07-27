@@ -1,0 +1,22 @@
+<div class='col-10 col-sm-8 col-md-6 mx-auto'>
+<h2>Sign up</h2>
+
+<%= bootstrap_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+  <%= f.text_field :name, autofocus: true %>
+  <%= f.text_field :photo %>
+  <%= f.text_area :bio %>
+  <%= f.email_field :email, autocomplete: "email" %>
+  <%= f.password_field :password, autocomplete: "new-password" %>
+  <% if @minimum_password_length %>
+  <em>(<%= @minimum_password_length %> characters minimum)</em>
+  <% end %><br />
+  <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+
+  <div class="actions">
+    <%= f.submit "Sign up" %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>
+</div>

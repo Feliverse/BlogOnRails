@@ -11,7 +11,21 @@
   </head>
 
   <body>
-    <h1> <%= link_to "BlogOnRails", root_path %> </h1> 
+    <header>
+      <h1> <%= link_to "BlogOnRails", root_path %> </h1>
+      <div class="d-flex justify-content-center">
+        <% if user_signed_in? %>
+          <%= link_to "+ New Post", new_user_post_path(current_user), class: "btn btn-success" %>
+          <%= link_to "Edit Profile", edit_user_registration_path, class: "btn btn-primary" %>
+          <%= button_to "Sign Out", destroy_user_session_path, method: :delete, class: "btn btn-danger" %>
+        <% else %>
+          <%= link_to "Sign In", new_user_session_path, class: "btn btn-primary" %>
+          <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-primary" %>
+        <% end %>
+      </div>
+    </header>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
     <%= yield %>
   </body>
 </html>
