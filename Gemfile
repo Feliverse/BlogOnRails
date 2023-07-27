@@ -79,5 +79,9 @@ group :test do
   gem 'webdrivers'
 end
 
+# use bootstrap for styling
 gem 'bootstrap'
 gem 'bootstrap_form'
+
+# use cancancan for authorization
+gem 'cancancan'
