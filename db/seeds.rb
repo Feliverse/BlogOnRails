@@ -8,14 +8,39 @@
 
 require 'faker'
 
+admin = User.new(
+  email: 'admin@mail.com',
+  password: '123456',
+  password_confirmation: '123456',
+  name: 'Admin',
+  photo: Faker::Avatar.image,
+  bio: Faker::Job.title,
+  posts_counter: 0,
+  role: 'admin'
+)
+admin.skip_confirmation!
+admin.save!
+
+user = User.new(
+  email: 'user@mail.com',
+  password: '123456',
+  password_confirmation: '123456',
+  name: 'User',
+  photo: Faker::Avatar.image,
+  bio: Faker::Job.title,
+  posts_counter: 0
+)
+user.skip_confirmation!
+user.save!
+
 6.times do
-  user = User.create!(
+  User.create!(
     email: Faker::Internet.email,
     password: Faker::Internet.password,
     name: Faker::GreekPhilosophers.name,
-    photo: Faker::LoremFlickr.image,
+    photo: Faker::Avatar.image,
     bio: Faker::Job.title,
-    post_counter: 0
+    posts_counter: 0
   )
 end
 
@@ -28,15 +53,15 @@ User.all.each do |user|
       comments_counter: 0,
       likes_counter: 0
     )
+  end
 
-    3.times do 
-      post = Post.order("RANDOM()").first
-      Comment.create!(text: Faker::GreekPhilosophers.quote, author:user, post:)
-    end
+  3.times do 
+    post = Post.order("RANDOM()").first
+    Comment.create!(text: Faker::GreekPhilosophers.quote, user:, post:)
+  end
 
-    3.times do 
-      post = Post.order("RANDOM()").first
-      Like.create!(author:user, post:)
-    end
+  3.times do 
+    post = Post.order("RANDOM()").first
+    Like.create!(user:, post:)
   end
 end
