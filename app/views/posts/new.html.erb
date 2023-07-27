@@ -1,15 +1,10 @@
+<div class='col-10 col-sm-8 col-md-6 mx-auto'>
 <section>
   <h1>New Post </h1>
-  <%= form_with(model: @post, url: user_posts_path(current_user), local: true) do |form| %>
-    <div>
-      <%= form.label :title %>
-      <%= form.text_field :title %>
-    </div>
-
-    <div>
-      <%= form.label :text %>
-      <%= form.text_area :text %>
-    </div>
+  <%= bootstrap_form_with(model: @post, url: user_posts_path(current_user), local: true) do |form| %>
+    <%= form.text_field :title %>
+    <%= form.text_area :text %>
     <%= form.submit "Create Post", class: "button" %>
   <% end %>
 </section>
+</div>
