@@ -69,10 +69,19 @@ GEM
     addressable (2.8.4)
       public_suffix (>= 2.0.2, < 6.0)
     ast (2.4.2)
+    autoprefixer-rails (10.4.13.0)
+      execjs (~> 2)
     bcrypt (3.1.19)
     bindex (0.8.1)
     bootsnap (1.16.0)
       msgpack (~> 1.2)
+    bootstrap (5.3.0.alpha3)
+      autoprefixer-rails (>= 9.1.0)
+      popper_js (>= 2.11.7, < 3)
+      sassc-rails (>= 2.0.0)
+    bootstrap_form (5.2.3)
+      actionpack (>= 6.0)
+      activemodel (>= 6.0)
     builder (3.2.4)
     capybara (3.39.2)
       addressable
@@ -97,6 +106,7 @@ GEM
       warden (~> 1.2.3)
     diff-lcs (1.5.0)
     erubi (1.12.0)
+    execjs (2.8.1)
     ffi (1.15.5)
     globalid (1.1.0)
       activesupport (>= 5.0)
@@ -145,6 +155,7 @@ GEM
       ast (~> 2.4.1)
       racc
     pg (1.5.3-x64-mingw-ucrt)
+    popper_js (2.11.7)
     public_suffix (5.0.3)
     puma (5.6.6)
       nio4r (~> 2.0)
@@ -282,6 +293,8 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap
+  bootstrap
+  bootstrap_form
   capybara
   debug
   devise
