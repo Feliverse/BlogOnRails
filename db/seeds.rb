@@ -15,7 +15,7 @@ admin = User.new(
   name: 'Admin',
   photo: Faker::Avatar.image,
   bio: Faker::Job.title,
-  posts_counter: 0,
+  post_counter: 0,
   role: 'admin'
 )
 admin.skip_confirmation!
@@ -28,19 +28,19 @@ user = User.new(
   name: 'User',
   photo: Faker::Avatar.image,
   bio: Faker::Job.title,
-  posts_counter: 0
+  post_counter: 0
 )
 user.skip_confirmation!
 user.save!
 
 6.times do
-  User.create!(
+  user = User.create!(
     email: Faker::Internet.email,
     password: Faker::Internet.password,
     name: Faker::GreekPhilosophers.name,
-    photo: Faker::Avatar.image,
+    photo: Faker::LoremFlickr.image,
     bio: Faker::Job.title,
-    posts_counter: 0
+    post_counter: 0
   )
 end
 
@@ -53,15 +53,15 @@ User.all.each do |user|
       comments_counter: 0,
       likes_counter: 0
     )
-  end
 
-  3.times do 
-    post = Post.order("RANDOM()").first
-    Comment.create!(text: Faker::GreekPhilosophers.quote, user:, post:)
-  end
+    3.times do 
+      post = Post.order("RANDOM()").first
+      Comment.create!(text: Faker::GreekPhilosophers.quote, author:user, post:)
+    end
 
-  3.times do 
-    post = Post.order("RANDOM()").first
-    Like.create!(user:, post:)
+    3.times do 
+      post = Post.order("RANDOM()").first
+      Like.create!(author:user, post:)
+    end
   end
 end

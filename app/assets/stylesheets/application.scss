@@ -1,4 +1,5 @@
 @import "bootstrap";
+@import "rails_bootstrap_forms";
 
 * {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -14,8 +15,7 @@ h1 {
   margin: 0;
   margin-bottom: 2rem;
   padding: 0;
-  background-color: #bbdeec;
-}
+ }
 
 .container {
   max-width: 900px;
@@ -26,6 +26,7 @@ h1 {
   display: flex;
   margin-bottom: 20px;
   align-items: center;
+  justify-content: center;
 }
 
 .user-img {
