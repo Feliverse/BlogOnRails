@@ -1,17 +1,30 @@
-<section class='container'>
-  <article class='reader-container'>
-    <div class='reader-head'>
-      <h2 class ='reader-title'> <%= @post.title %> <small><i>by: <%= link_to @post.author.name, user_path(@post.author) %></i></small> </h2>
-      <p class='post-counter user-counter'>Comments: <%= @post.comments_counter =%>, Likes: <%= @post.likes_counter =%> </p>
+<section class='container post-container img-thumbnail'>
+  <article class='reader-container img-thumbnail'>
+    <div class='post-details'>
+      <h2 class ='post-details'> <%= @post.title %> <small><i>by: <%= link_to @post.author.name, user_path(@post.author) %></i></small> </h2>
+      <p class='post-counter user-counter'> 
+        &#128172 <%= @post.comments_counter %>   
+        &#10084 <%= @post.likes_counter %> 
+      </p>
     </div>
-    <p class='reader-post'> <%= @post.text %> </p>
+    <p class='post-details'> <%= @post.text * 10 %> </p>
   </article>
-  <div class='comment-container'>
-      <h3> Comments </h3> 
-      <% @post.comments.each do |comment| %>
-        <li class='comment'>
-          <p class ='comment-text'><b><i class='comment-name'> <%= link_to comment.author.name, user_path(comment.author) %>: </i></b> <%= comment.text %> </p>
-        </li>
-      <% end %>
-    </div>
+  <div class='comment-container img-thumbnail'>
+    <h3> Comments </h3> 
+    <% @post.comments.each do |comment| %>
+      <li class='comment '>
+        <p class ='comment-text'><b><i class='comment-name'> <%= link_to comment.author.name, user_path(comment.author) %>: </i></b> <%= comment.text %> </p>
+      </li>
+    <% end %>
+    <%= form_with model: @comment, url: user_post_comments_path(post_id: @post.id), scope: :comment do |form| %>
+      <div class='d-flex align-items-center img-thumbnail border-5'>
+        <div class='flex-grow-1'>
+          <%= form.text_area :text, placeholder:"Leave a comment here", id:"comment", class: "w-100 img-thumbnail border-success border-5" %>
+        </div>
+        <div>
+          <%= form.submit "Add comment" %>
+        </div>
+      </div>  
+    <% end %>
+  </div>
 </section>

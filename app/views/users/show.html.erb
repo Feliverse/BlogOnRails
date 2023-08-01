@@ -18,11 +18,14 @@
   <li class='post-details'>
     <h3><a class="post-title" role="button" href="<%= user_post_path(@user, post) =%>"><%= post.title =%></a></h3>
     <p class='post-text'> <%= post.text*10 %> </p>
-    <p class='post-counter user-counter'> Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %> </p>
+    <p class='post-counter user-counter'> 
+      &#128172 <%= post.comments_counter %>   
+      &#10084 <%= post.likes_counter %> 
+    </p>
   </li>
   <% end %>
 </ul>
 <div style="display: flex; justify-content: center">
-  <a class="btn btn-all-posts" type="button" href="<%= user_posts_path(@user) %>">See all posts</a>
+  <a class="btn btn-primary" type="button" href="<%= user_posts_path(@user) %>">See all posts</a>
 </div>
 </section>

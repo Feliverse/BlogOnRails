@@ -33,19 +33,8 @@ class PostsController < ApplicationController
     @post.destroy
     redirect_to user_posts_path(@post.user)
   end
-
-  def like
-    @post = Post.find_by(id: params['id'])
-    @post.likes.create(user_id: current_user.id)
-    redirect_to user_posts_path(@post.user)
-  end
-
-  def unlike
-    @post = Post.find_by(id: params['id'])
-    @post.likes.where(user_id: current_user.id).destroy_all
-    redirect_to user_posts_path(@post.user)
-  end
-
+  
+  
   private
 
   def post_params
