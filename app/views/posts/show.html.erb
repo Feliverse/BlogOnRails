@@ -4,7 +4,7 @@
       <h2 class ='reader-title'> <%= @post.title %> <small><i>by: <%= link_to @post.author.name, user_path(@post.author) %></i></small> </h2>
       <p class='post-counter user-counter'>Comments: <%= @post.comments_counter =%>, Likes: <%= @post.likes_counter =%> </p>
     </div>
-    <p class='reader-post'> <%= @post.text * 70 =%> </p>
+    <p class='reader-post'> <%= @post.text =%> </p>
   </article>
   <div class='comment-container'>
       <h3> Comments </h3> 

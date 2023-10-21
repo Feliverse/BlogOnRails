@@ -2,7 +2,7 @@
   <%= link_to user_avatar(@user.photo), user_path(@user) %>
   <div class ='user-details'>
     <h2 class ='user-name'><%= @user.name %></h2> 
-    <p class='user-counter'>number of posts: <%= @user.post_counter %></p>
+    <p class='user-counter'>Number of posts: <%= @user.post_counter %></p>
   </div>
 </section>
 
@@ -15,7 +15,7 @@
           <%= post.title %>
         </a>
       </h3>
-      <p> <%= post.text*10 %> </p>
+      <p> <%= post.text %> </p>
       <p class='post-counter user-counter'>
         Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %>
       </p>
