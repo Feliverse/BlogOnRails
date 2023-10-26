@@ -1,7 +1,7 @@
 @import "bootstrap";
 
 * {
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   border: 0;
   list-style: none;
   padding-inline-start: 0;
@@ -14,7 +14,7 @@ h1 {
   margin: 0;
   margin-bottom: 2rem;
   padding: 0;
-  background-color: #bbdeec;
+  text-decoration: none;
 }
 
 .container {
@@ -32,7 +32,7 @@ h1 {
   font-size: smaller;
   width: 100px;
   height: 100px;
-  border: 2px solid #000;
+  border: 0px solid #db0a0a;
   margin-right: 10px;
   object-fit: cover;
   border-radius: 50%;
@@ -43,7 +43,7 @@ h1 {
   grid-template-columns: auto auto;
   justify-content: space-between;
   margin-left: 10px;
-  background-color: #6fb3ce;
+  background-color: #d5dcdf;
   column-gap: 10px;
   width: 65%;
   height: 95%;
