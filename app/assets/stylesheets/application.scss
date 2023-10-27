@@ -9,12 +9,9 @@
 
 h1 {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-size: 3rem;
-  text-align: center;
+  font-size: 2rem;
   margin: 0;
-  margin-bottom: 2rem;
   padding: 0;
-  text-decoration: none;
 }
 
 .container {
@@ -144,4 +141,10 @@ input[type=submit] {
   font-size: 16px;
   margin: 4px 2px;
   cursor: pointer;
+}
+
+.custom-link {
+  background-color: transparent;
+  text-decoration: none;
+  color: rgb(23, 26, 27);
 }
