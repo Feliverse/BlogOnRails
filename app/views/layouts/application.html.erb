@@ -11,23 +11,32 @@
   </head>
 
   <body>
-    <header class="navbar navbar-light bg-light shadow>
-      <div class="d-flex justify-content-between align-items-center">
-        <h1 > <%= link_to "BlogOnRails", root_path, class:"text-decoration-none" %> </h1>
-        <div class="d-flex">
+    <header class="navbar navbar-light bg-warning ">
+      
+        <h1> <%= link_to "BlogOnRails", root_path, class:"custom-link" %> </h1>
+        <div class="d-flex p-3">
           <% if user_signed_in? %>
-            <%= link_to "+New Post", new_user_post_path(current_user), class: "m-2 text-decoration-none" %>
-            <%= link_to "Profile", edit_user_registration_path, class: "m-2 text-decoration-none" %>
-            <%= button_to "Sign Out", destroy_user_session_path, method: :delete, class: "btn btn-dark m-1 text-decoration-none" %>
+            <%= link_to "+New Post", new_user_post_path(current_user), class: "btn m-1 custom-link" %>
+            <%= link_to "Profile", edit_user_registration_path, class: "btn m-1 custom-link" %>
+            <%= button_to "Sign Out", destroy_user_session_path, method: :delete, class: "btn btn-dark m-1 custom-link" %>
           <% else %>
-            <%= link_to "Sign In", new_user_session_path, class: "btn btn-primary" %>
-            <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-primary" %>
+            <%= link_to "Sign In", new_user_session_path, class: "m-1 custom-link" %>
+            <%= link_to "Sign Up", new_user_registration_path, class: "m-1 custom-link" %>
+
           <% end %>
         </div>
-      </div>
+        
     </header>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <div class="bg-warning hello">
+          <% if user_signed_in? %>
+            
+          <% else%>
+            <h2>Stay Curious.</h2>
+            <p>Discover stories, thinking, and resources <br> to help you become a better developer.</p>
+            <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-dark m-1 custom-link btn-hello" %>
+          <% end %>
+        </div>
+     <p class="alert"><%= alert %></p>
     <%= yield %>
   </body>
 </html>

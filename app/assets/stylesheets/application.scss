@@ -9,18 +9,34 @@
 
 h1 {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-size: 3rem;
-  text-align: center;
-  margin: 0;
-  margin-bottom: 2rem;
+  font-size: 1.8rem;
+  margin: 0.5rem 1rem;
   padding: 0;
-  text-decoration: none;
 }
 
 .container {
   max-width: 900px;
   margin: 0 auto;
 }
+
+.hello {
+  border-top: 1px solid #000000;
+  
+}
+
+.hello h2 {
+  font-size: 4rem;
+  margin-block: 2rem;
+  padding: 2rem;
+}
+
+.hello p {
+  font-size: 1.3rem;
+  margin-block: 2rem;
+  padding: 0 2rem;
+}
+
+
 
 .user {
   display: flex;
@@ -116,6 +132,11 @@ a {
   margin-block: 0;
 }
 
+.btn-hello {
+  background-color: #000;
+  margin-right: 2rem;
+}
+
 .reader-container {
   background-color: #9eadb3;
   padding-left: 5px;
@@ -144,4 +165,10 @@ input[type=submit] {
   font-size: 16px;
   margin: 4px 2px;
   cursor: pointer;
+}
+
+.custom-link {
+  background-color: transparent;
+  text-decoration: none;
+  color: rgb(23, 26, 27);
 }
